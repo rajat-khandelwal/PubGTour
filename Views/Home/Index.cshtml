@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">
+        <img src="~/icons/BGlogo.png" class="img-fluid" style="width:30%" />
+    </h1>
+    <p>Kill to Earn</p>
+</div>
+<div class="row" id="TournamentList">
+    <!-- timeline item 1 left dot -->
+
+</div>
+<br />
+<div class="text-center text-break">
+    <button class="btn btn-dark" onclick="FetchTounament()" >Load More</button>
+</div>
+@section scripts {
+    <script src="~/js/tournament.js"></script>
+}

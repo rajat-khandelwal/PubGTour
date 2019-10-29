@@ -1,0 +1,73 @@
+﻿
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+
+    Layout = "";
+
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+<div class="container">
+
+    <div class="row d-flex align-items-center h-100">
+  
+        <div class="col-md-6 offset-md-3  col-sm-12 my-auto">
+            <form asp-action="Login" class="" style="padding:10px; border:1px solid gray">
+
+
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" placeholder="PayTm Number" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                <//`div>
+
+
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <label asp-for="RemeberMe">
+
+                            <input asp-for="RemeberMe" />
+                            @Html.DisplayNameFor(m => m.RemeberMe)
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group text-left col">
+                        <input type="submit" value="Login" class="btn btn-outline-success" />
+                    </div>
+                    <a class="text-right col" asp-area="" asp-controller="Employee" asp-action="AddorEdit">Create account</a>
+
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+        asp-fallback-test="window.jQuery"
+        crossorigin="anonymous"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+    var exampleModalCenter = $('#exampleModalCenter').modal('toggle');
+
+</script>
