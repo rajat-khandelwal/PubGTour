@@ -129,6 +129,8 @@ namespace Asp.MVCCoreWeb.Migrations
 
                     b.HasKey("Id");
 
+               
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 

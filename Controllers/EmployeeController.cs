@@ -15,10 +15,10 @@ namespace Asp.MVCCoreWeb.Controllers
     public class EmployeeController : Controller
     {
         private readonly EmployeeContext _context;
-        private readonly SignInManager<IdentityUser> SignInManager;
-        private readonly UserManager<IdentityUser> usermanager;
+        private readonly SignInManager<ApplicationUser> SignInManager;
+        private readonly UserManager<ApplicationUser> usermanager;
 
-        public EmployeeController(UserManager<IdentityUser> usermanager, SignInManager<IdentityUser> SignInManager)
+        public EmployeeController(UserManager<ApplicationUser> usermanager, SignInManager<ApplicationUser> SignInManager)
         {
             this.usermanager = usermanager;
             this.SignInManager = SignInManager;
@@ -70,7 +70,11 @@ namespace Asp.MVCCoreWeb.Controllers
             if (ModelState.IsValid)
             {
 
-                var user = new IdentityUser { UserName = employee.Phone, PhoneNumber = employee.Phone };
+                var user = new ApplicationUser { 
+                    UserName = employee.Phone,
+                    PhoneNumber = employee.Phone ,
+                    PubG_UserName = employee.PubG_UserName
+                };
                 var result = await usermanager.CreateAsync(user, employee.Password);
        
                 if (result.Succeeded)

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -14,12 +13,10 @@ namespace Asp.MVCCoreWeb.Models
 {
     public class Payment
     {
-
         [Key]
         public long Id { get; set; }
 
         public string UserId { get; set; }
-
 
         [DisplayName("Selected Tounament")]
         public long TournamentID { get; set; }
@@ -41,7 +38,6 @@ namespace Asp.MVCCoreWeb.Models
         public string PAYMENTMODE { get; set; }
    
         public long TXNID { get; set; }
-
 
         public string RESPCODE { get; set; }
 

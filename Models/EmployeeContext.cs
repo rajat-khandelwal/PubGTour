@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Asp.MVCCoreWeb.Models
 {
 
-    public class EmployeeContext:IdentityDbContext
+    public class EmployeeContext:IdentityDbContext<ApplicationUser>
     {
         public EmployeeContext(DbContextOptions<EmployeeContext> options):base(options)
 
@@ -21,5 +21,16 @@ namespace Asp.MVCCoreWeb.Models
         public DbSet<Payment> Payments { get; set; }
 
         public DbSet<Tournaments> tournment { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+
+            builder.Entity<ApplicationUser>(entity => {
+                entity.HasIndex(e => e.PhoneNumber).IsUnique();
+            });
+        }
     }
 }
+               

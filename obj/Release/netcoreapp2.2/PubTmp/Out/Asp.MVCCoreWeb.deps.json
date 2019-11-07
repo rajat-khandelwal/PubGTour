@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "78636cb5699bc11754904753f4408d1d1758106f"
+    "signature": "a114cdc422d0975b2ed03f46ddada197b97e0d71"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Asp.MVCCoreWeb/1.0.0": {
         "dependencies": {
+          "GitForWindows": "2.23.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.4",
@@ -37,6 +38,7 @@
           "Asp.MVCCoreWeb.dll": {}
         }
       },
+      "GitForWindows/2.23.0": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -3644,6 +3646,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "GitForWindows/2.23.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SocKA/fMQp82199KwJQ0egO1+Qx6sULxNOrzlLcnRlSVZLxKctJpSpUYCDFIJOyBNpKNBL6xuP/m7ZOLqo+gxQ==",
+      "path": "gitforwindows/2.23.0",
+      "hashPath": "gitforwindows.2.23.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",

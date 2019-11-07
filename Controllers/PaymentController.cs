@@ -13,11 +13,11 @@ namespace Asp.MVCCoreWeb.Controllers
     public class PaymentController : Controller
     {
 
-        private readonly UserManager<IdentityUser> _usermanager;
+        private readonly UserManager<ApplicationUser> _usermanager;
         // GET: /<controller>/
         private readonly EmployeeContext _context;
 
-        public PaymentController(UserManager<IdentityUser> usermanager,EmployeeContext employeeContext) {
+        public PaymentController(UserManager<ApplicationUser> usermanager,EmployeeContext employeeContext) {
 
             _context = employeeContext;
             _usermanager = usermanager;
@@ -29,10 +29,12 @@ namespace Asp.MVCCoreWeb.Controllers
 
             Payment pt = new Payment();
             var loggedin = await _usermanager.GetUserAsync(HttpContext.User);
-         //   pt.email = loggedin.Email;
+            //pt.email = loggedin.Email;
             pt.Phone = loggedin.PhoneNumber;
             pt.UserId = loggedin.Id;
-            pt.amount = 10.00;//_context.tournment;
+            pt.time = new DateTime();
+    
+            pt.amount =_context.tournment.Find(id).fee;
             pt.TournamentID = id;
             pt.Id = 0;
             return View(pt);
@@ -48,10 +50,11 @@ namespace Asp.MVCCoreWeb.Controllers
                     Payment pt = new Payment();
                     _context.Payments.Add(user);
                     _context.SaveChanges();
-                    user.CallBacklurl = "http://localhost:50972/Payment/checkCheksum";
+                  
+                    user.CallBacklurl = this.Url.Action("checkCheksum", "payment",null,Uri.UriSchemeHttp);
+
                     string html = pt.StartPayment(user);
               
-
                     TempData["Rawhtml"] = html;
                     return RedirectToAction("InitiatePayment");
                 }
@@ -92,11 +95,16 @@ namespace Asp.MVCCoreWeb.Controllers
             {
                 Payment pt = new Payment();
                 pt.Id = Convert.ToInt64(paytmParams["ORDERID"]);
-                pt.PAYMENTMODE = paytmParams["PAYMENTMODE"];
+                pt =  _context.Payments.Find(pt.Id);
+              
+                pt.PAYMENTMODE = paytmParams["RESPMSG"];
                 pt.RESPCODE = paytmParams["RESPCODE"];
                 //pt.TXNID = Convert.ToInt64(paytmParams["TXNID"]);
                 pt.Sataus = paytmParams["STATUS"];
-                _context.Update(pt);
+             
+
+                _context.Payments.Update(pt);
+               
                 _context.SaveChanges();
                 return RedirectToAction("index","home");
             }
@@ -120,10 +128,6 @@ namespace Asp.MVCCoreWeb.Controllers
 
           return View(TempData["Rawhtml"]);
         }
-
-
-
-
 
     }
 }

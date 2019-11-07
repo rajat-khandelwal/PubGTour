@@ -33,12 +33,12 @@ function FetchTounament() {
                     '  <div class="float-right text-muted">' + val.date_Time + '</div>' +
                     ' <h4 class="card-title text-muted">' + val.title + '</h4>' +
                     ' <div class="progress">' +
-                    '      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">Slots 75/' + val.slots + '</div>' +
+                    '      <div class="progress-bar progress-bar-striped progress-bar-animated text-dark" role="progressbar" aria-valuenow="' + val.avail +'" aria-valuemin="0" aria-valuemax="100" style="width: ' + val.avail +'%">Slots ' + val.avail +'/' + val.slots + '</div>' +
                     '  </div>' +
                     '  <div style="font-size:x-large">' +
                     '    <label class="badge" style="background:#b3d7ff"><i class="fas fa-trophy"></i>' + val.prize + ' <i class="fas fa-rupee-sign"></i></label>' +
                     '   <label class="badge" style="background:#b3d7ff"><i class="fas fa-users"></i>' + val.type + '</label>' +
-                    '   <label class="badge alert-light" style="background:#ffc107"><i class="fas fa-user"></i>10/' + val.slots + '</label>' +
+                    '   <label class="badge alert-light" style="background:#ffc107"><i class="fas fa-user"></i>' + val.avail+'/' + val.slots + '</label>' +
                     '  <div class="p-2 btn-group btn-group-sm float-right" role="group" aria-label="example">' +
                     '       <button type="button"   class="btn btn-secondary">Detail</button>';
                 if (!val.isjoined) {

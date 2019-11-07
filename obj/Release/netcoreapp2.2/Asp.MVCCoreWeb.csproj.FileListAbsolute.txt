@@ -13,7 +13,6 @@ F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCor
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.TagHelpers.input.cache
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.TagHelpers.output.cache
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.RazorCoreGenerate.cache
-F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Employee\AddorEdit.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Employee\Index.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
@@ -40,3 +39,4 @@ F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\View
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Tournament\Details.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Tournament\Edit.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Tournament\Index.g.cshtml.cs
+F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs

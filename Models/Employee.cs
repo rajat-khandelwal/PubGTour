@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 
 namespace Asp.MVCCoreWeb.Models
 {
-    public class Employee
+    public class Employee 
     {
+
         [Key]
         public int EmployeeID { get; set; }
 
@@ -35,6 +37,8 @@ namespace Asp.MVCCoreWeb.Models
         [Compare("Password", ErrorMessage = "PAssword and confirm-Password should be same")]
         public string ConfirmPassword { get; set; }
 
+        [DisplayName("PubG UserName")]
+        public string PubG_UserName { get; set; }
 
     }
 }

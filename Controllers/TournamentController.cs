@@ -13,9 +13,9 @@ namespace Asp.MVCCoreWeb.Controllers
     public class TournamentController : Controller
     {
         private readonly EmployeeContext _context;
-        private readonly UserManager<IdentityUser> _usermanager;
+        private readonly UserManager<ApplicationUser> _usermanager;
 
-        public TournamentController(EmployeeContext context,UserManager<IdentityUser> _usermanager )
+        public TournamentController(EmployeeContext context,UserManager<ApplicationUser> _usermanager )
         {
             _context = context;
             this._usermanager = _usermanager;
@@ -155,11 +155,32 @@ namespace Asp.MVCCoreWeb.Controllers
         [HttpPost]
         public async Task<JsonResult> GetTournamentList(int skp)
         {
-            var loggedin = await _usermanager.GetUserAsync(HttpContext.User);
-  
-            var dd = await _context.tournment.Select(m => new { title = m.title, date_Time = m.Date_Time.ToString("dddd, dd MMMM yyyy hh:mm tt 'IST'"), fee = m.fee, prize = m.Prize,tourId = m.Id,slots= m.Slots,type = m.type ,Isjoined = _context.Payments.Any(p => p.UserId == loggedin.Id && p.TournamentID == m.Id) }).ToListAsync();
+            try
+            {
+                var loggedin = await _usermanager.GetUserAsync(HttpContext.User);
+
+                var dd = await _context.tournment.Select(m => new {
+                    title = m.title,
+                    date_Time = m.Date_Time.ToString("dddd, dd MMMM yyyy hh:mm tt 'IST'"),
+                    fee = m.fee,
+                    prize = m.Prize,
+                    tourId = m.Id,
+                    slots = m.Slots,
+                    type = m.type,
+                    Isjoined = _context.Payments.Any(p => p.UserId == loggedin.Id && p.TournamentID == m.Id && p.RESPCODE == "01"),
+                    avail = _context.Payments.Where(p => p.TournamentID == m.Id && p.RESPCODE == "01").Count()
+
+                }).ToListAsync();
+                return Json(dd);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
            
-            return Json(dd);
+           
+           
 
 
         }

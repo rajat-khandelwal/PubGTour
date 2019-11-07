@@ -1,5 +1,4 @@
-﻿
-@model LoginModel
+﻿@model LoginModel
 @{
     ViewData["Title"] = "Login";
 
@@ -7,67 +6,63 @@
 
 }
 
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
-<div class="container">
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://getbootstrap.com/docs/4.0/examples/floating-labels/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <div class="row d-flex align-items-center h-100">
-  
-        <div class="col-md-6 offset-md-3  col-sm-12 my-auto">
-            <form asp-action="Login" class="" style="padding:10px; border:1px solid gray">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Login</title>
 
+    <link rel="canonical" href="~/lib/bootstrap/dist/css/floating-labels.css">
 
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="UserName" class="control-label"></label>
-                    <input asp-for="UserName" class="form-control" placeholder="PayTm Number" />
-                    <span asp-validation-for="UserName" class="text-danger"></span>
-                <//`div>
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="~/lib/bootstrap/dist/css/floating-labels.css" rel="stylesheet">
+</head>
 
-                <div class="form-group">
-                    <label asp-for="Password" class="control-label"></label>
-                    <input asp-for="Password" class="form-control" placeholder="Password" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <div class="custom-checkbox">
-                        <label asp-for="RemeberMe">
-
-                            <input asp-for="RemeberMe" />
-                            @Html.DisplayNameFor(m => m.RemeberMe)
-                        </label>
-
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="form-group text-left col">
-                        <input type="submit" value="Login" class="btn btn-outline-success" />
-                    </div>
-                    <a class="text-right col" asp-area="" asp-controller="Employee" asp-action="AddorEdit">Create account</a>
-
-                </div>
-
-
-
-            </form>
+<body>
+    <form class="form-signin" asp-action="Login">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="~/icons/BFicon.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Botox Ground</h1>
+            <p>Kill-to-Earn</p>
         </div>
-    </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-label-group">
+            <input asp-for="UserName" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <label asp-for="UserName"></label>
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
 
+        <div class="form-label-group">
+            <input asp-for="Password" class="form-control" placeholder="Password" required="">
+            <label asp-for="Password">Password</label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
 
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-        asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-        asp-fallback-test="window.jQuery"
-        crossorigin="anonymous"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+        <div class="checkbox mb-3">
+            <label asp-for="RemeberMe">
 
-    var exampleModalCenter = $('#exampleModalCenter').modal('toggle');
+                <input asp-for="RemeberMe" />
+                @Html.DisplayNameFor(m => m.RemeberMe)
+            </label>
+        </div>
+        <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+        <div style="text-align: center;
+    padding-top: inherit;
+    font-size: larger;
+">
+            <a class="text-center" href="@Url.Action("addoredit","employee")">Create Account</a>
 
-</script>
+        </div>
+    </form>
+
+</body>
+</html>

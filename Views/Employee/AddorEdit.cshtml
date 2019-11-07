@@ -1,22 +1,44 @@
 ﻿@model Asp.MVCCoreWeb.Models.Employee
 
 @{
-    ViewData["Title"] = "AddorEdit";
+    ViewData["Title"] = "Create Account";
+    Layout = "";
 }
 
-<h1>Create</h1>
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://getbootstrap.com/docs/4.0/examples/floating-labels/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<h4>Employee</h4>
-<hr />
-<div class="row">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+
+    <link rel="canonical" href="~/lib/bootstrap/dist/css/floating-labels.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/lib/bootstrap/dist/css/floating-labels.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Create ypu gaming profile</h1>
+
+    <hr />
+
     <div class="col-md-6">
         <form asp-action="AddorEdit">
             <div asp-validation-summary="All" class="text-danger"></div>
-        @*    <input type="hidden" asp-for="EmployeeId"/>*@
+
             <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+                <label asp-for="PubG_UserName" class="control-label"></label>
+                <input asp-for="PubG_UserName" class="form-control" />
+                <span asp-validation-for="PubG_UserName" class="text-danger"></span>
             </div>
             <div class="row">
                 <div class="form-grou col-md-6">
@@ -40,12 +62,61 @@
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>
+
+
+<body>
+    <form class="form-signin" asp-action="AddorEdit">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="~/icons/BFicon.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Botox Ground</h1>
+            <p>Kill-to-Earn</p>
+            <h4>Create your gaming profile</h4>
+        </div>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-label-group">
+            <input asp-for="PubG_UserName" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <label asp-for="PubG_UserName"></label>
+            <span asp-validation-for="PubG_UserName" class="text-danger"></span>
+        </div>
+
+        <div class="form-label-group">
+            <input asp-for="Phone" class="form-control" placeholder="Password" required="">
+            <label asp-for="Phone">Password</label>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="form-label-group">
+            <input asp-for="Password" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <label asp-for="Password"></label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-label-group">
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <label asp-for="ConfirmPassword"></label>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+        <div style="text-align: center;
+    padding-top: inherit;
+    font-size: larger;
+">
+            <a class="text-center" href="@Url.Action("login","account")">Create Account</a>
+
+        </div>
+    </form>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>

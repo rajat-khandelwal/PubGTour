@@ -10,9 +10,9 @@ namespace Asp.MVCCoreWeb.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> SignInManager;
+        private readonly SignInManager<ApplicationUser> SignInManager;
 
-        public AccountController( SignInManager<IdentityUser> SignInManager)
+        public AccountController( SignInManager<ApplicationUser> SignInManager)
         {
            
             this.SignInManager = SignInManager;
