@@ -7,9 +7,9 @@
         <div class="col-md-6 offset-md-3  col-sm-12">
             <form asp-action="startpayment">
                 @Html.HiddenFor(m => m.TournamentID)
-                @Html.HiddenFor(m => m.time);
-                @Html.HiddenFor(m => m.UserId);
-                @Html.HiddenFor(m => m.amount);
+                @Html.HiddenFor(m => m.time)
+                @Html.HiddenFor(m => m.UserId)
+                @Html.HiddenFor(m => m.amount)
                 <input type="hidden" asp-for="Id" value="0" class="form-control" placeholder="PayTm Number" />
 
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -36,5 +36,4 @@
     </div>
 
 
-</div>
 </div>

@@ -5,7 +5,6 @@ F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\bin\Release\netcoreapp2.2\Asp.MVCCor
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\bin\Release\netcoreapp2.2\Asp.MVCCoreWeb.pdb
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\bin\Release\netcoreapp2.2\Asp.MVCCoreWeb.Views.dll
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\bin\Release\netcoreapp2.2\Asp.MVCCoreWeb.Views.pdb
-F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.csproj.CoreCompileInputs.cache
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.RazorAssemblyInfo.cache
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.RazorAssemblyInfo.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Asp.MVCCoreWeb.AssemblyInfoInputs.cache

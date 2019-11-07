@@ -39,3 +39,4 @@ F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Asp.MVCCoreW
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Asp.MVCCoreWeb.pdb
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Asp.MVCCoreWeb.csprojAssemblyReference.cache
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Asp.MVCCoreWeb.csproj.CoreCompileInputs.cache

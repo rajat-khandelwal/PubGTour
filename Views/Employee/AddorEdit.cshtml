@@ -27,92 +27,44 @@
 </head>
 
 <body>
-    <h1>Create ypu gaming profile</h1>
-
-    <hr />
-
-    <div class="col-md-6">
-        <form asp-action="AddorEdit">
-            <div asp-validation-summary="All" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="PubG_UserName" class="control-label"></label>
-                <input asp-for="PubG_UserName" class="form-control" />
-                <span asp-validation-for="PubG_UserName" class="text-danger"></span>
-            </div>
-            <div class="row">
-                <div class="form-grou col-md-6">
-                    <label asp-for="Phone" class="control-label"></label>
-                    <input asp-for="Phone" class="form-control" />
-                    <span asp-validation-for="Phone" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <label asp-for="Password" class="control-label"></label>
-                    <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
-</body>
-</html>
-
-
-<body>
     <form class="form-signin" asp-action="AddorEdit">
         <div class="text-center mb-4">
             <img class="mb-4" src="~/icons/BFicon.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 font-weight-normal">Botox Ground</h1>
-            <p>Kill-to-Earn</p>
-            <h4>Create your gaming profile</h4>
+           
+            <h4>Create Account for <strong class="text-danger"> Kill to Earn </strong></h4>
         </div>
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-label-group">
-            <input asp-for="PubG_UserName" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <input asp-for="PubG_UserName" class="form-control" placeholder="PubG Username" required="" autofocus="">
             <label asp-for="PubG_UserName"></label>
             <span asp-validation-for="PubG_UserName" class="text-danger"></span>
         </div>
 
         <div class="form-label-group">
-            <input asp-for="Phone" class="form-control" placeholder="Password" required="">
+            <input asp-for="Phone" class="form-control" placeholder="PayTM Number" required="">
             <label asp-for="Phone">Password</label>
             <span asp-validation-for="Phone" class="text-danger"></span>
         </div>
 
         <div class="form-label-group">
-            <input asp-for="Password" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <input asp-for="Password" class="form-control" placeholder="Password" required="" autofocus="">
             <label asp-for="Password"></label>
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
 
         <div class="form-label-group">
-            <input asp-for="ConfirmPassword" class="form-control" placeholder="PaytM Number" required="" autofocus="">
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" required="" autofocus="">
             <label asp-for="ConfirmPassword"></label>
             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
 
-        <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-dark btn-block" type="submit">Join</button>
         <div style="text-align: center;
     padding-top: inherit;
     font-size: larger;
 ">
-            <a class="text-center" href="@Url.Action("login","account")">Create Account</a>
+            <a class="text-center" href="@Url.Action("login","account")">Login</a>
 
         </div>
     </form>
@@ -120,3 +72,6 @@
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
 </body>
+</html>
+
+

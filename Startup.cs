@@ -63,7 +63,7 @@ namespace Asp.MVCCoreWeb
                 app.UseDeveloperExceptionPage();
                 // app.UseExceptionHandler("/Home/Error");
             }
-            app.UseHttpsRedirection();
+          app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
