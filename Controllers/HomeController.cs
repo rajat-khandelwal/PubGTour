@@ -11,9 +11,12 @@ namespace Asp.MVCCoreWeb.Controllers
 {
     public class HomeController : Controller
     {
-       [Authorize]
+      
+        [AllowAnonymous]
         public IActionResult Index()
         {
+            Publishsms sms = new Publishsms();
+           
             return View();
         }
 

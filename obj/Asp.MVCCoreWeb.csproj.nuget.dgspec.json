@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "AWSSDK.SimpleNotificationService": {
+              "target": "Package",
+              "version": "[3.3.101.85, )"
+            },
             "GitForWindows": {
               "target": "Package",
               "version": "[2.23.0, )"

@@ -3,25 +3,30 @@
     FetchTounament()
 });
 
+var loadmore = '#loadmore';
+
 var TournamentList = '#TournamentList';
 
+function loadmorehide(Isload) {
+    if (Isload) {
+        $(loadmore).hide();
+    }
+    else
+        $(loadmore).show();
+}
+
+var count = 0;
 function FetchTounament() {
-
-    var count = 0;
-
+    loadmorehide(true);
     $.ajax({
         url: UrlArray.GettounamentList,
         type: "post",
         data: { skp: count },
         success: function (data) {
-            count += 10;
-            console.log(data);
+         
             var htmp = '';
             $.each(data, function (key, val) {
                 var cls = '';
-
-                console.log(val.isjoined);
-
                 var item = ' <div class="card col-lg-12 col-sm-12 py-2">' +
                     '<div class="row no-gutters">' +
                     '<div class="col-auto">' +
@@ -40,7 +45,7 @@ function FetchTounament() {
                     '   <label class="badge" style="background:#b3d7ff"><i class="fas fa-users"></i>' + val.type + '</label>' +
                     '   <label class="badge alert-light" style="background:#ffc107"><i class="fas fa-user"></i>' + val.avail+'/' + val.slots + '</label>' +
                     '  <div class="p-2 btn-group btn-group-sm float-right" role="group" aria-label="example">' +
-                    '       <button type="button"   class="btn btn-secondary">Detail</button>';
+                    '       <button type="button" OnClick=javascript:location.replace("/tournament/details/' + val.tourId + '")  class="btn btn-secondary">Detail</button>';
                 if (!val.isjoined) {
                     item += '<button type="button" OnClick=javascript:location.replace("/Payment/startpayment/' + val.tourId + '")  class="btn btn-success">Join</button>';
                 }
@@ -57,15 +62,15 @@ function FetchTounament() {
                     ' </div>"';
 
                 $(TournamentList).append(item);
-
+                loadmorehide(false);
             });        
 
 
-          
+            count += 10;
         },
         error: function ()
         {
-
+            loadmorehide(false);
         }
 
     });

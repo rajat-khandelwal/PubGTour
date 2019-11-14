@@ -64,11 +64,17 @@ namespace Asp.MVCCoreWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-      
         public async Task<IActionResult> AddorEdit(Employee employee)
         {
             if (ModelState.IsValid)
             {
+
+                if (usermanager.Users.Any( m => m.PubG_UserName.Contains(employee.PubG_UserName)))
+                {
+                    ModelState.AddModelError("","Pubg user name already taken");
+                    return View(employee);
+                }
+
 
                 var user = new ApplicationUser { 
                     UserName = employee.Phone,

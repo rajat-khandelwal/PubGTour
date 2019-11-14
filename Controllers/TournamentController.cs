@@ -15,7 +15,7 @@ namespace Asp.MVCCoreWeb.Controllers
         private readonly EmployeeContext _context;
         private readonly UserManager<ApplicationUser> _usermanager;
 
-        public TournamentController(EmployeeContext context,UserManager<ApplicationUser> _usermanager )
+        public TournamentController(EmployeeContext context, UserManager<ApplicationUser> _usermanager)
         {
             _context = context;
             this._usermanager = _usermanager;
@@ -56,7 +56,7 @@ namespace Asp.MVCCoreWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date_Time,type,Slots,fee,Prize,Details")] Tournaments tournaments)
+        public async Task<IActionResult> Create([Bind("Id,title,Date_Time,type,Slots,fee,Prize,Details")] Tournaments tournaments)
         {
             if (ModelState.IsValid)
             {
@@ -158,8 +158,13 @@ namespace Asp.MVCCoreWeb.Controllers
             try
             {
                 var loggedin = await _usermanager.GetUserAsync(HttpContext.User);
-
-                var dd = await _context.tournment.Select(m => new {
+                if (loggedin == null)
+                {
+                    loggedin = new ApplicationUser();
+                    loggedin.Id = "0";
+                }
+                var dd = await _context.tournment.Where(m=>m.Date_Time > DateTime.Now).Select(m => new
+                {
                     title = m.title,
                     date_Time = m.Date_Time.ToString("dddd, dd MMMM yyyy hh:mm tt 'IST'"),
                     fee = m.fee,
@@ -170,7 +175,7 @@ namespace Asp.MVCCoreWeb.Controllers
                     Isjoined = _context.Payments.Any(p => p.UserId == loggedin.Id && p.TournamentID == m.Id && p.RESPCODE == "01"),
                     avail = _context.Payments.Where(p => p.TournamentID == m.Id && p.RESPCODE == "01").Count()
 
-                }).ToListAsync();
+                }).Skip(skp).ToListAsync();
                 return Json(dd);
             }
             catch (Exception ex)
@@ -178,12 +183,25 @@ namespace Asp.MVCCoreWeb.Controllers
 
                 throw;
             }
-           
-           
-           
-
 
         }
 
+
+        public async Task<JsonResult> GetJoinedPlayers(long id)
+        {
+
+            var plyaerslist = (from tr in _context.tournment
+                               join py in _context.Payments on tr.Id equals py.TournamentID
+                               join usr in _context.Users on py.UserId equals usr.Id
+                               where tr.Id == id
+                               select new
+                               {
+                                   UserName = usr.PubG_UserName,
+                                   Country = "India",
+
+                               }).Take(10);
+
+            return Json(plyaerslist);
+        }
     }
 }

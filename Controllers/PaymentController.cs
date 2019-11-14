@@ -1,4 +1,5 @@
 ﻿using Asp.MVCCoreWeb.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using paytm;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Asp.MVCCoreWeb.Controllers
 {
+    [Authorize]
     public class PaymentController : Controller
     {
 
@@ -33,9 +35,10 @@ namespace Asp.MVCCoreWeb.Controllers
             pt.Phone = loggedin.PhoneNumber;
             pt.UserId = loggedin.Id;
             pt.time = new DateTime();
-    
-            pt.amount =_context.tournment.Find(id).fee;
+            
+            ViewBag.tourinfo =_context.tournment.Find(id);
             pt.TournamentID = id;
+            pt.amount = ViewBag.tourinfo.fee;
             pt.Id = 0;
             return View(pt);
         }

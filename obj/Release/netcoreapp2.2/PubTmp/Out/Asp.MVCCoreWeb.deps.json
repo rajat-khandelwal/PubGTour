@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "a114cdc422d0975b2ed03f46ddada197b97e0d71"
+    "signature": "52e91a48c0fbb8c84cd074636b8ebd885a8ce992"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "Asp.MVCCoreWeb/1.0.0": {
         "dependencies": {
+          "AWSSDK.SimpleNotificationService": "3.3.101.85",
           "GitForWindows": "2.23.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
@@ -36,6 +37,31 @@
         },
         "compile": {
           "Asp.MVCCoreWeb.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.103.61": {
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.103.61"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.SimpleNotificationService/3.3.101.85": {
+        "dependencies": {
+          "AWSSDK.Core": "3.3.103.61"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.101.85"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll": {}
         }
       },
       "GitForWindows/2.23.0": {},
@@ -3646,6 +3672,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AWSSDK.Core/3.3.103.61": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P44Ua5oNX733IJ8b1n0zOdaa8+K1e1VJUnIyaQT4slU4GU0CmoVAO2fTGR1+hIQ6DqPGRG6HOXqH3L+1QxyzaQ==",
+      "path": "awssdk.core/3.3.103.61",
+      "hashPath": "awssdk.core.3.3.103.61.nupkg.sha512"
+    },
+    "AWSSDK.SimpleNotificationService/3.3.101.85": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qu5LHP3liNkg4EJXCYGnOKOOpR6kmIRgikQVF9jjThcyXIIc1Rz2+ohbELhziy8g3GDrqZJU95/mVBNGbij9ZQ==",
+      "path": "awssdk.simplenotificationservice/3.3.101.85",
+      "hashPath": "awssdk.simplenotificationservice.3.3.101.85.nupkg.sha512"
     },
     "GitForWindows/2.23.0": {
       "type": "package",

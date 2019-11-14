@@ -19,6 +19,8 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Custom styles for this template -->
+    @*<link href="~/lib/bootstrap/dist/css/floating-labels.css" rel="stylesheet">*@
 </head>
 <body class="bg-light">
     <header>
@@ -74,11 +76,11 @@
             &copy; 2019 - Asp.MVCCoreWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"

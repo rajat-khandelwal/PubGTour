@@ -1,39 +1,52 @@
 ﻿@model Payment
 
-<div class="container">
+    <div class="container">
 
-    <div class="row d-flex align-items-center">
+  
+        <div class="row d-flex align-items-center" style="padding-top:5%">
+         
 
-        <div class="col-md-6 offset-md-3  col-sm-12">
-            <form asp-action="startpayment">
-                @Html.HiddenFor(m => m.TournamentID)
-                @Html.HiddenFor(m => m.time)
-                @Html.HiddenFor(m => m.UserId)
-                @Html.HiddenFor(m => m.amount)
-                <input type="hidden" asp-for="Id" value="0" class="form-control" placeholder="PayTm Number" />
+            <div class="col-md-6 offset-md-3  col-sm-12">
 
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Phone" class="control-label"></label>
-                    <input asp-for="Phone" class="form-control" placeholder="PayTm Number" />
-                    <span asp-validation-for="Phone" class="text-danger"></span>
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-header">@ViewBag.tourinfo.title</div>
+                    <div class="card-body">
+                        <h5 class="card-text">Time : <span class="badge badge-success">@ViewBag.tourinfo.Date_Time</span></h5>
+                        <h5 class="card-text">Type : <span class="badge badge-success">@ViewBag.tourinfo.type</span></h5> 
+                        <h5 class="card-text">Prize : <span class="badge badge-success">@ViewBag.tourinfo.Prize</span></h5>
+                        <p class="card-text">Details : <span class="text-justify text-light">@ViewBag.tourinfo.Details</span></p>
+                    </div>
                 </div>
 
-                <div class="form-group" style="font-size:x-large">
-                    <label asp-for="amount" class="control-label"></label>
-                     <label  class="col-form-label">- @Model.amount </label>
-                    <span asp-validation-for="amount" class="text-danger"></span>
-                </div>
+                <form asp-action="startpayment">
+                    @Html.HiddenFor(m => m.TournamentID)
+                    @Html.HiddenFor(m => m.time)
+                    @Html.HiddenFor(m => m.UserId)
+                    @Html.HiddenFor(m => m.amount)
+                    <input type="hidden" asp-for="Id" value="0" class="form-control" placeholder="PayTm Number" />
 
-                <div class="form-group">
-                    <input type="submit" value="Pay" class="btn btn-success btn-lg btn-block" />
-                </div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="PayTm Number" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
 
-                <a class="text-danger " href="@Url.Action("index","home")"><i class="fa fa-backward" aria-hidden="true"></i>Back</a>
+                    <div class="form-group" style="font-size:x-large">
+                        <label asp-for="amount" class="control-label"></label>
+                        <label class="col-form-label">- @ViewBag.tourinfo.fee </label>
+                        <span asp-validation-for="amount" class="text-danger"></span>
+                    </div>
 
-            </form>
+                    <div class="form-group">
+                        <input type="submit" value="Pay" class="btn btn-success btn-lg btn-block" />
+                    </div>
+
+                    <a class="text-danger btn btn-block" style="font-size:x-large" href="@Url.Action("index","home")"><i class="fa fa-backward" aria-hidden="true"></i>Back</a>
+
+                </form>
+            </div>
         </div>
+
+
     </div>
-
-
-</div>
