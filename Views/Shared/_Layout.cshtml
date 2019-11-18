@@ -49,19 +49,19 @@
 
                     </ul>
 
-                        @if (SigninUser.IsSignedIn(User))
-                        {
+                    @if (SigninUser.IsSignedIn(User))
+                    {
 
-                            <a class="btn btn-outline-danger" method="Post" asp-controller="Account" asp-action="Logout">
-                                Logout @User.Identity.Name
-                            </a>
+                        <a class="btn btn-outline-danger" method="Post" asp-controller="Account" asp-action="Logout">
+                            Logout @User.Identity.Name
+                        </a>
 
-                        }
-                        else
-                        {
-                            <a class="btn text-success btn-outline-success" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                        }
-
+                    }
+                    else
+                    {
+                        <a class="btn text-success btn-outline-success" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                    }
+                    <a class="small" href="#"><i class="fas fa-bell"></i></a>
                 </div>
            
         </nav>
