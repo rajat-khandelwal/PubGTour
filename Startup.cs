@@ -47,7 +47,7 @@ namespace Asp.MVCCoreWeb
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
           //  services.AddDbContext<Models.TournamentsContext>();
-            services.AddDbContext<Models.EmployeeContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("production")));
+            services.AddDbContext<Models.EmployeeContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("DevString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

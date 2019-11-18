@@ -13,10 +13,7 @@ namespace Asp.MVCCoreWeb.Models
     {
 
         [Key]
-        public int EmployeeID { get; set; }
-
-        [DisplayName("Pubg User-Name")]
-        public string UserName { get; set; }
+        public string EmployeeID { get; set; }
 
 
         [DisplayName("Phone Number")]
@@ -34,11 +31,16 @@ namespace Asp.MVCCoreWeb.Models
 
         [DisplayName("Confirm Password")]
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "PAssword and confirm-Password should be same")]
+        [Compare("Password", ErrorMessage = "Password and confirm-Password should be same")]
         public string ConfirmPassword { get; set; }
 
         [DisplayName("PubG UserName")]
         public string PubG_UserName { get; set; }
+
+
+        [DisplayName("Email")]
+        [EmailAddress]
+        public string Email { get; set; }
 
     }
 }
