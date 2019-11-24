@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Asp.MVCCoreWeb.Models.Payment>
+
+@{
+    ViewData["Title"] = "View";
+}
+    <br />
+<h1 class="text-center">Transactions</h1>
+
+
+<div class="p-3 rounded jumbotron">
+    <h6 class="border-bottom border-gray">All Transactiopns</h6>
+
+    @foreach (var item in Model)
+    {
+        <label class="text-center" style="font-size:larger">Time : @item.time</label>
+        <div class="row p-3 border-bottom  border-warning ">
+
+            <div class="col-sm-1 rounded">
+                <img src="~/icons/paytm.png" class="img-fluid" style="width:55px" />
+            </div>
+            <div class="col-sm-11" style="font-size: large;font-weight: 700;">
+                @if (item.RESPCODE == "01")
+                {
+                    <label class="text-success">Success</label>
+
+                }
+              
+                else
+                {
+                    <label class="text-danger">Failed</label>
+                }
+                <label>@item.amount <i class="fas fa-rupee-sign"></i></label>
+              <br />
+                <label class="text-dark">via PayTM Account @item.Phone </label>
+            </div>
+
+        </div>
+    }
+
+</div>

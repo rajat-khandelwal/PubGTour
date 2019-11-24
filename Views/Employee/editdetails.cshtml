@@ -15,7 +15,7 @@
             </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+            @Html.HiddenFor(m=>m.userid)
             <div class="form-group">
                 <label asp-for="Phone" class="control-label"></label>
                 <input asp-for="Phone" class="form-control" />

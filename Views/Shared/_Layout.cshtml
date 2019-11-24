@@ -25,7 +25,7 @@
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-         
+
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/icons/BFicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
                     BoTox-Ground
@@ -41,12 +41,14 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-info" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-info" asp-area="" asp-controller="payment" asp-action="Transactions">Transactions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-info" asp-area="" asp-controller="employee" asp-action="editdetails">Profile</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Tournament" asp-area="" asp-action="Notifications"><i class="fas fa-bell"></i> <span class="badge badge-light">Joined</span></a>
+                        </li>
                     </ul>
 
                     @if (SigninUser.IsSignedIn(User))
@@ -61,7 +63,7 @@
                     {
                         <a class="btn text-success btn-outline-success" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
                     }
-                    <a class="small" href="#"><i class="fas fa-bell"></i></a>
+                  
                 </div>
            
         </nav>
@@ -75,7 +77,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - Asp.MVCCoreWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2019 - BotoxGround - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <environment include="Development">

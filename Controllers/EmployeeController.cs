@@ -31,6 +31,7 @@ namespace Asp.MVCCoreWeb.Controllers
         // GET: Employee
         public async Task<IActionResult> Index()
         {
+            
             return View(await _context.Employees.ToListAsync());
         }
 
@@ -67,7 +68,7 @@ namespace Asp.MVCCoreWeb.Controllers
 
             Employee emp = new Employee();
 
-
+            emp.userid = usr.Id;
             emp.Email = usr.Email;
             emp.Phone = usr.PhoneNumber;
           
@@ -89,7 +90,7 @@ namespace Asp.MVCCoreWeb.Controllers
                 if (ModelState.IsValid)
                 {
 
-                    var olduserdata = await usermanager.FindByIdAsync(emp.EmployeeID);
+                    var olduserdata = await usermanager.FindByIdAsync(emp.userid);
 
                     olduserdata.Email = emp.Email;
                     olduserdata.PhoneNumber = emp.Phone;

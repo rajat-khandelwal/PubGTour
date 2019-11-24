@@ -5,7 +5,7 @@
 }
 
 
-@Html.HiddenFor(m=>m.Id)
+@Html.HiddenFor(m => m.Id)
 <div>
     <br />
     <div class="card text-center">
@@ -33,10 +33,44 @@
             </div>
 
             <div class="col-sm">
-                <button class="btn btn-success" onclick="javascript:location.replace('/Payment/startpayment/@Model.Id')">Join</button>
+                @{ if (Model.Date_Time < DateTime.Now)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Match was over!
+                        </div>
+                    }
+                    else
+                    {
+                        <button class="btn btn-success" onclick="javascript:location.replace('/Payment/startpayment/@Model.Id')">Join</button>
+
+                    }
+                }
                 <label>Go back to <a href="/" class="">Home</a></label>
 
             </div>
+            @if (!String.IsNullOrEmpty(Model.Roomkey))
+            {
+                <div class="row"  style="font-size:x-large">
+
+                    <div class="col">
+                        <label  class="">Room Key <i class="fas fa-key"></i> </label>
+                        <input type="text" readonly class="form-control form-control-lg" value="@Model.Roomkey                       ">
+                    </div>
+                    <div class="col">
+                        <label class="">Password <i class="fas fa-lock-open"></i> </label>
+                        <input type="text" readonly class="form-control form-control-lg" value="@Model.Roompassword">
+                    </div>
+
+                </div>
+
+            }
+            else
+            {
+
+                <div class="alert alert-info" role="alert">
+                    Rook Id and password will be display here before match start (id you joined the match)
+                </div>
+            }
 
         </div>
         <div class="card-footer text-muted">
@@ -58,9 +92,9 @@
 
 @section scripts {
     <script src="~/js/details.js"></script>
-<script>
+    <script>
 
 
-</script>
+    </script>
 
 }

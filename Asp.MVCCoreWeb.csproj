@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191120190411_roomid.cs" />
+    <Compile Remove="Migrations\20191120190411_roomid.Designer.cs" />
+    <Compile Remove="Migrations\20191120191322_roomid.cs" />
+    <Compile Remove="Migrations\20191120191322_roomid.Designer.cs" />
+    <Compile Remove="Migrations\20191120191532_roomkey.cs" />
+    <Compile Remove="Migrations\20191120191532_roomkey.Designer.cs" />
+    <Compile Remove="Migrations\20191120191738_roomky.cs" />
+    <Compile Remove="Migrations\20191120191738_roomky.Designer.cs" />
     <Compile Remove="Models\TournamentsContext.cs" />
   </ItemGroup>
 
@@ -20,8 +28,8 @@
 
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.85" />
-    <PackageReference Include="GitForWindows" Version="2.23.0" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.92" />
+    <PackageReference Include="GitForWindows" Version="2.24.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />

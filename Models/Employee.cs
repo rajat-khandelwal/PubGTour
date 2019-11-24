@@ -13,8 +13,9 @@ namespace Asp.MVCCoreWeb.Models
     {
 
         [Key]
-        public string EmployeeID { get; set; }
+        public int EmployeeID { get; set; }
 
+        public string userid { get; set; }
 
         [DisplayName("Phone Number")]
         [DataType(DataType.PhoneNumber)]

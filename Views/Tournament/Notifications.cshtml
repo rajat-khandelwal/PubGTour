@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Asp.MVCCoreWeb.Models.Tournaments>
+
+@{
+    ViewData["Title"] = "Notifications";
+}
+<br />
+<div class="p-3 rounded jumbotron">
+    <h6 class="border-bottom border-gray">Joined Matches</h6>
+
+    @foreach (var item in Model)
+    {
+        <div class="row p-3 border-bottom border-gray ">
+            <div class="col-1 bg-success rounded"></div>
+            <div class="col-11">
+
+                <div class="row">
+                    <div class="col-sm">
+                        Time :
+                        <i class="fas fa-clock"></i> @item.Date_Time
+                    </div>
+
+                    <div class="col-sm text-success">
+                        Status : Joined
+                    </div>
+                </div>
+
+                @if (string.IsNullOrEmpty(item.Roompassword))
+                {
+                    <b class="text-warning"> RoomID and Room-password will be visible here before 20 min of match start! </b>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col">
+                            <label class="">Room Key - <i class="fas fa-key"></i>@item.Roomkey</label>
+
+                        </div>
+
+                        <div class="col">
+                            <label class="">Password - <i class="fas fa-lock-open"></i> @item.Roompassword</label>
+
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    }
+    <p class="text-info lead">
+        How to join :
+        In the game, on the top left of your screen, below the start icon, you can find the “room” icon.
+        By clicking that, you can now enter the room ID and password shared to you.
+    </p>
+</div>

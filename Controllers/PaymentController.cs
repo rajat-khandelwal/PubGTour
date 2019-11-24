@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using paytm;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,15 +15,16 @@ namespace Asp.MVCCoreWeb.Controllers
     [Authorize]
     public class PaymentController : Controller
     {
+        private readonly EmployeeContext _context;
 
         private readonly UserManager<ApplicationUser> _usermanager;
         // GET: /<controller>/
-        private readonly EmployeeContext _context;
-
-        public PaymentController(UserManager<ApplicationUser> usermanager,EmployeeContext employeeContext) {
-
-            _context = employeeContext;
+   
+        public PaymentController(UserManager<ApplicationUser> usermanager,EmployeeContext context) { 
+          
             _usermanager = usermanager;
+            _context = context;
+        
         }
 
         [HttpGet]
@@ -97,7 +99,8 @@ namespace Asp.MVCCoreWeb.Controllers
             if (isValidChecksum)
             {
                 Payment pt = new Payment();
-                pt.Id = Convert.ToInt64(paytmParams["ORDERID"]);
+                pt.Id = Convert.ToInt64(paytmParams["ORDERID"]
+                    );
                 pt =  _context.Payments.Find(pt.Id);
               
                 pt.PAYMENTMODE = paytmParams["RESPMSG"];
@@ -116,6 +119,10 @@ namespace Asp.MVCCoreWeb.Controllers
 
         }
 
+        /// <summary>
+        /// do not delete this method this is the first method which return html for payment start 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult InitiatePayment() {
 
             try
@@ -131,6 +138,16 @@ namespace Asp.MVCCoreWeb.Controllers
 
           return View(TempData["Rawhtml"]);
         }
+
+
+        public async Task<IActionResult> Transactions() {
+
+            var history = _context.Payments.Where(m=>m.UserId == _usermanager.GetUserId(User)).OrderByDescending(o=>o.time);
+
+            return View(history);
+
+        }
+
 
     }
 }

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "AWSSDK.Core/3.3.103.61": {
+      "AWSSDK.Core/3.3.103.68": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/AWSSDK.Core.dll": {}
@@ -11,10 +11,10 @@
           "lib/netstandard2.0/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.SimpleNotificationService/3.3.101.85": {
+      "AWSSDK.SimpleNotificationService/3.3.101.92": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.3.103.61, 3.4.0)"
+          "AWSSDK.Core": "[3.3.103.68, 3.4.0)"
         },
         "compile": {
           "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll": {}
@@ -23,7 +23,7 @@
           "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll": {}
         }
       },
-      "GitForWindows/2.23.0": {
+      "GitForWindows/2.24.0.2": {
         "type": "package"
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4863,15 +4863,15 @@
     }
   },
   "libraries": {
-    "AWSSDK.Core/3.3.103.61": {
-      "sha512": "P44Ua5oNX733IJ8b1n0zOdaa8+K1e1VJUnIyaQT4slU4GU0CmoVAO2fTGR1+hIQ6DqPGRG6HOXqH3L+1QxyzaQ==",
+    "AWSSDK.Core/3.3.103.68": {
+      "sha512": "vEPRUfVbuInPlEyW1TNhCGTNm6W4k+i9/SDOYsT3BysGjs2QzRHJmnJSMsgYj7oHuiAZRkb+cG8hG/wdguvvOw==",
       "type": "package",
-      "path": "awssdk.core/3.3.103.61",
+      "path": "awssdk.core/3.3.103.68",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.3.103.61.nupkg.sha512",
+        "awssdk.core.3.3.103.68.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/MonoAndroid10/AWSSDK.Core.XML",
         "lib/MonoAndroid10/AWSSDK.Core.dll",
@@ -4912,16 +4912,16 @@
         "tools/account-management.ps1"
       ]
     },
-    "AWSSDK.SimpleNotificationService/3.3.101.85": {
-      "sha512": "qu5LHP3liNkg4EJXCYGnOKOOpR6kmIRgikQVF9jjThcyXIIc1Rz2+ohbELhziy8g3GDrqZJU95/mVBNGbij9ZQ==",
+    "AWSSDK.SimpleNotificationService/3.3.101.92": {
+      "sha512": "nY4jnyRPV1l2WHad7bhSWa+g9gPLgSvpYwQ8uFZGh2VXJG/diiqYb7gvCxn3/tUC7NhzoXE5D/kWH61/hIegMQ==",
       "type": "package",
-      "path": "awssdk.simplenotificationservice/3.3.101.85",
+      "path": "awssdk.simplenotificationservice/3.3.101.92",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/AWSSDK.SimpleNotificationService.CodeAnalysis.dll",
-        "awssdk.simplenotificationservice.3.3.101.85.nupkg.sha512",
+        "awssdk.simplenotificationservice.3.3.101.92.nupkg.sha512",
         "awssdk.simplenotificationservice.nuspec",
         "lib/MonoAndroid10/AWSSDK.SimpleNotificationService.XML",
         "lib/MonoAndroid10/AWSSDK.SimpleNotificationService.dll",
@@ -4952,10 +4952,10 @@
         "tools/uninstall.ps1"
       ]
     },
-    "GitForWindows/2.23.0": {
-      "sha512": "SocKA/fMQp82199KwJQ0egO1+Qx6sULxNOrzlLcnRlSVZLxKctJpSpUYCDFIJOyBNpKNBL6xuP/m7ZOLqo+gxQ==",
+    "GitForWindows/2.24.0.2": {
+      "sha512": "GqrklbvynagQeX2PNLUkRj54H8kxoIfSZGPaIgzthbx5LBKNpB9vcQsl4fKwfeYdc3zK6QQfatmbnJ2h8b66CQ==",
       "type": "package",
-      "path": "gitforwindows/2.23.0",
+      "path": "gitforwindows/2.24.0.2",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -4963,7 +4963,7 @@
         "LICENSE.txt",
         "ReleaseNotes.html",
         "content/ReleaseNotes.css",
-        "gitforwindows.2.23.0.nupkg.sha512",
+        "gitforwindows.2.24.0.2.nupkg.sha512",
         "gitforwindows.nuspec",
         "tools/Install.ps1",
         "tools/cmd/git-gui.exe",
@@ -4971,11 +4971,16 @@
         "tools/cmd/gitk.exe",
         "tools/cmd/start-ssh-agent.cmd",
         "tools/cmd/start-ssh-pageant.cmd",
+        "tools/dev/_._",
+        "tools/dev/mqueue/_._",
+        "tools/dev/shm/_._",
         "tools/etc/DIR_COLORS",
         "tools/etc/bash.bash_logout",
         "tools/etc/bash.bashrc",
         "tools/etc/docx2txt.config",
         "tools/etc/fstab",
+        "tools/etc/gitattributes",
+        "tools/etc/gitconfig",
         "tools/etc/inputrc",
         "tools/etc/msystem",
         "tools/etc/nanorc",
@@ -5128,8 +5133,6 @@
         "tools/mingw64/bin/zlib1.dll",
         "tools/mingw64/doc/git-credential-manager/LICENSE.txt",
         "tools/mingw64/doc/git-credential-manager/README.md",
-        "tools/mingw64/etc/gitattributes",
-        "tools/mingw64/etc/gitconfig",
         "tools/mingw64/etc/pki/ca-trust/extracted/java/cacerts",
         "tools/mingw64/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt",
         "tools/mingw64/etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem",
@@ -6686,6 +6689,7 @@
         "tools/mingw64/share/git-core/templates/hooks/post-update.sample",
         "tools/mingw64/share/git-core/templates/hooks/pre-applypatch.sample",
         "tools/mingw64/share/git-core/templates/hooks/pre-commit.sample",
+        "tools/mingw64/share/git-core/templates/hooks/pre-merge-commit.sample",
         "tools/mingw64/share/git-core/templates/hooks/pre-push.sample",
         "tools/mingw64/share/git-core/templates/hooks/pre-rebase.sample",
         "tools/mingw64/share/git-core/templates/hooks/pre-receive.sample",
@@ -7737,8 +7741,6 @@
         "tools/usr/lib/terminfo/78/xterms",
         "tools/usr/lib/terminfo/78/xterms-sun",
         "tools/usr/lib/winpty.lib",
-        "tools/usr/libexec/bigram.exe",
-        "tools/usr/libexec/code.exe",
         "tools/usr/libexec/frcode.exe",
         "tools/usr/libexec/getprocaddr32.exe",
         "tools/usr/libexec/getprocaddr64.exe",
@@ -7867,6 +7869,7 @@
         "tools/usr/share/mintty/lang/fr.po",
         "tools/usr/share/mintty/lang/ja.po",
         "tools/usr/share/mintty/lang/messages.pot",
+        "tools/usr/share/mintty/lang/nb.po",
         "tools/usr/share/mintty/lang/pt_BR.po",
         "tools/usr/share/mintty/lang/ru.po",
         "tools/usr/share/mintty/lang/zh_CN.po",
@@ -9423,6 +9426,7 @@
         "tools/usr/share/vim/vim81/ftplugin/j.vim",
         "tools/usr/share/vim/vim81/ftplugin/java.vim",
         "tools/usr/share/vim/vim81/ftplugin/javascript.vim",
+        "tools/usr/share/vim/vim81/ftplugin/javascriptreact.vim",
         "tools/usr/share/vim/vim81/ftplugin/jproperties.vim",
         "tools/usr/share/vim/vim81/ftplugin/json.vim",
         "tools/usr/share/vim/vim81/ftplugin/jsp.vim",
@@ -9560,6 +9564,7 @@
         "tools/usr/share/vim/vim81/indent/ant.vim",
         "tools/usr/share/vim/vim81/indent/automake.vim",
         "tools/usr/share/vim/vim81/indent/awk.vim",
+        "tools/usr/share/vim/vim81/indent/bash.vim",
         "tools/usr/share/vim/vim81/indent/bib.vim",
         "tools/usr/share/vim/vim81/indent/bst.vim",
         "tools/usr/share/vim/vim81/indent/bzl.vim",
@@ -9606,6 +9611,7 @@
         "tools/usr/share/vim/vim81/indent/j.vim",
         "tools/usr/share/vim/vim81/indent/java.vim",
         "tools/usr/share/vim/vim81/indent/javascript.vim",
+        "tools/usr/share/vim/vim81/indent/javascriptreact.vim",
         "tools/usr/share/vim/vim81/indent/json.vim",
         "tools/usr/share/vim/vim81/indent/jsp.vim",
         "tools/usr/share/vim/vim81/indent/ld.vim",
@@ -10082,6 +10088,7 @@
         "tools/usr/share/vim/vim81/syntax/ayacc.vim",
         "tools/usr/share/vim/vim81/syntax/b.vim",
         "tools/usr/share/vim/vim81/syntax/baan.vim",
+        "tools/usr/share/vim/vim81/syntax/bash.vim",
         "tools/usr/share/vim/vim81/syntax/basic.vim",
         "tools/usr/share/vim/vim81/syntax/bc.vim",
         "tools/usr/share/vim/vim81/syntax/bdf.vim",
@@ -10255,6 +10262,7 @@
         "tools/usr/share/vim/vim81/syntax/hgcommit.vim",
         "tools/usr/share/vim/vim81/syntax/hitest.vim",
         "tools/usr/share/vim/vim81/syntax/hog.vim",
+        "tools/usr/share/vim/vim81/syntax/hollywood.vim",
         "tools/usr/share/vim/vim81/syntax/hostconf.vim",
         "tools/usr/share/vim/vim81/syntax/hostsaccess.vim",
         "tools/usr/share/vim/vim81/syntax/html.vim",
@@ -10284,6 +10292,7 @@
         "tools/usr/share/vim/vim81/syntax/java.vim",
         "tools/usr/share/vim/vim81/syntax/javacc.vim",
         "tools/usr/share/vim/vim81/syntax/javascript.vim",
+        "tools/usr/share/vim/vim81/syntax/javascriptreact.vim",
         "tools/usr/share/vim/vim81/syntax/jess.vim",
         "tools/usr/share/vim/vim81/syntax/jgraph.vim",
         "tools/usr/share/vim/vim81/syntax/jovial.vim",
@@ -10609,7 +10618,7 @@
         "tools/usr/share/vim/vim81/syntax/vrml.vim",
         "tools/usr/share/vim/vim81/syntax/vroom.vim",
         "tools/usr/share/vim/vim81/syntax/vsejcl.vim",
-        "tools/usr/share/vim/vim81/syntax/vuejs.vim",
+        "tools/usr/share/vim/vim81/syntax/vue.vim",
         "tools/usr/share/vim/vim81/syntax/wast.vim",
         "tools/usr/share/vim/vim81/syntax/wdiff.vim",
         "tools/usr/share/vim/vim81/syntax/web.vim",
@@ -19172,8 +19181,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "AWSSDK.SimpleNotificationService >= 3.3.101.85",
-      "GitForWindows >= 2.23.0",
+      "AWSSDK.SimpleNotificationService >= 3.3.101.92",
+      "GitForWindows >= 2.24.0.2",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -19224,11 +19233,11 @@
         "dependencies": {
           "AWSSDK.SimpleNotificationService": {
             "target": "Package",
-            "version": "[3.3.101.85, )"
+            "version": "[3.3.101.92, )"
           },
           "GitForWindows": {
             "target": "Package",
-            "version": "[2.23.0, )"
+            "version": "[2.24.0.2, )"
           },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",

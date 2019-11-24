@@ -25,8 +25,8 @@
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Program Files (x86)\dotnet\sdk\NuGetFallbackFolder\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Program Files (x86)\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.tools\2.2.0</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgMicrosoft_AspNetCore_Razor_Design Condition=" '$(PkgMicrosoft_AspNetCore_Razor_Design)' == '' ">C:\Program Files (x86)\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor.design\2.2.0</PkgMicrosoft_AspNetCore_Razor_Design>
-    <PkgGitForWindows Condition=" '$(PkgGitForWindows)' == '' ">C:\Users\user\.nuget\packages\gitforwindows\2.23.0</PkgGitForWindows>
-    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\user\.nuget\packages\awssdk.core\3.3.103.61</PkgAWSSDK_Core>
-    <PkgAWSSDK_SimpleNotificationService Condition=" '$(PkgAWSSDK_SimpleNotificationService)' == '' ">C:\Users\user\.nuget\packages\awssdk.simplenotificationservice\3.3.101.85</PkgAWSSDK_SimpleNotificationService>
+    <PkgGitForWindows Condition=" '$(PkgGitForWindows)' == '' ">C:\Users\user\.nuget\packages\gitforwindows\2.24.0.2</PkgGitForWindows>
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\user\.nuget\packages\awssdk.core\3.3.103.68</PkgAWSSDK_Core>
+    <PkgAWSSDK_SimpleNotificationService Condition=" '$(PkgAWSSDK_SimpleNotificationService)' == '' ">C:\Users\user\.nuget\packages\awssdk.simplenotificationservice\3.3.101.92</PkgAWSSDK_SimpleNotificationService>
   </PropertyGroup>
 </Project>

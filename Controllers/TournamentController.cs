@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Asp.MVCCoreWeb.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Asp.MVCCoreWeb.Controllers
 {
+    [Authorize]
     public class TournamentController : Controller
     {
         private readonly EmployeeContext _context;
@@ -36,10 +38,20 @@ namespace Asp.MVCCoreWeb.Controllers
             }
 
             var tournaments = await _context.tournment
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id).ConfigureAwait(false);
+          
+            
             if (tournaments == null)
             {
                 return NotFound();
+            }
+
+            var isjoined = _context.Payments.Where(p => p.TournamentID == tournaments.Id && p.UserId == _usermanager.GetUserId(User));
+
+            if (_context.Payments.Any(p => p.TournamentID == tournaments.Id && p.UserId == _usermanager.GetUserId(User)))
+
+            {
+                tournaments.Roomkey = tournaments.Roompassword = "";
             }
 
             return View(tournaments);
@@ -88,7 +100,7 @@ namespace Asp.MVCCoreWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Date_Time,type,Slots,fee,Prize,Details")] Tournaments tournaments)
+        public async Task<IActionResult> Edit(long id, Tournaments tournaments)
         {
             if (id != tournaments.Id)
             {
@@ -199,9 +211,21 @@ namespace Asp.MVCCoreWeb.Controllers
                                    UserName = usr.PubG_UserName,
                                    Country = "India",
 
-                               }).Take(10);
+                               });
 
             return Json(plyaerslist);
+        }
+
+
+        public async Task<IActionResult> Notifications() {
+            var id =  _usermanager.GetUserId(User);
+
+            var dd = await _context.Payments.Where(a => a.UserId == id && a.RESPCODE == "01").Select(s => s.TournamentID).ToListAsync();
+
+            var notlist = await _context.tournment.OrderByDescending(o => o.Date_Time).ToListAsync();
+
+            return View(notlist);
+
         }
     }
 }

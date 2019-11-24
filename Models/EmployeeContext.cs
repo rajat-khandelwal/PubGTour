@@ -22,15 +22,15 @@ namespace Asp.MVCCoreWeb.Models
 
         public DbSet<Tournaments> tournment { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //   // base.OnModelCreating(builder);
 
 
-            builder.Entity<ApplicationUser>(entity => {
-                entity.HasIndex(e => e.PhoneNumber).IsUnique();
-            });
-        }
+        //    //builder.Entity<ApplicationUser>(entity => {
+        //    //    entity.HasIndex(e => e.PhoneNumber).IsUnique();
+        //    //});
+        //}
     }
 }
                

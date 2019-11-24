@@ -15,6 +15,10 @@ namespace Asp.MVCCoreWeb.Models
 
         public string type { get; set; }
 
+        public string Roomkey { get; set; }
+
+        public string Roompassword { get; set; }
+
         public string title { get; set; }
         public int Slots { get; set; }
 

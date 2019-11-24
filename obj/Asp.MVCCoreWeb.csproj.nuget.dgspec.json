@@ -43,11 +43,11 @@
           "dependencies": {
             "AWSSDK.SimpleNotificationService": {
               "target": "Package",
-              "version": "[3.3.101.85, )"
+              "version": "[3.3.101.92, )"
             },
             "GitForWindows": {
               "target": "Package",
-              "version": "[2.23.0, )"
+              "version": "[2.24.0.2, )"
             },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
