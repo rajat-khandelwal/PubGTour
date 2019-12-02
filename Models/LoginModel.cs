@@ -10,7 +10,7 @@ namespace Asp.MVCCoreWeb.Models
 {
     public class LoginModel
     {
-        [DisplayName("User Name")]
+        [DisplayName("PayTM Number")]
         [Required]
         [Phone]
        

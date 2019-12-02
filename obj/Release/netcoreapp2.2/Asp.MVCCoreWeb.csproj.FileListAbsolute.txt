@@ -39,3 +39,6 @@ F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\View
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Tournament\Edit.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Tournament\Index.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Employee\editdetails.g.cshtml.cs
+F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Payment\Transactions.g.cshtml.cs
+F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Release\netcoreapp2.2\Razor\Views\Tournament\Notifications.g.cshtml.cs

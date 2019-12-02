@@ -24,10 +24,6 @@ namespace Asp.MVCCoreWeb.Controllers
             this.SignInManager = SignInManager;
         }
 
-      
-
-
-
         // GET: Employee
         public async Task<IActionResult> Index()
         {

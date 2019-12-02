@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "52e91a48c0fbb8c84cd074636b8ebd885a8ce992"
+    "signature": "e4d04370841f3208b27258c6c433979301000d32"
   },
   "compilationOptions": {
     "defines": [
@@ -24,8 +24,8 @@
     ".NETCoreApp,Version=v2.2": {
       "Asp.MVCCoreWeb/1.0.0": {
         "dependencies": {
-          "AWSSDK.SimpleNotificationService": "3.3.101.85",
-          "GitForWindows": "2.23.0",
+          "AWSSDK.SimpleNotificationService": "3.3.101.92",
+          "GitForWindows": "2.24.0.2",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
@@ -40,32 +40,32 @@
           "Asp.MVCCoreWeb.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.103.61": {
+      "AWSSDK.Core/3.3.103.68": {
         "runtime": {
           "lib/netstandard2.0/AWSSDK.Core.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.103.61"
+            "fileVersion": "3.3.103.68"
           }
         },
         "compile": {
           "lib/netstandard2.0/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.SimpleNotificationService/3.3.101.85": {
+      "AWSSDK.SimpleNotificationService/3.3.101.92": {
         "dependencies": {
-          "AWSSDK.Core": "3.3.103.61"
+          "AWSSDK.Core": "3.3.103.68"
         },
         "runtime": {
           "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.101.85"
+            "fileVersion": "3.3.101.92"
           }
         },
         "compile": {
           "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll": {}
         }
       },
-      "GitForWindows/2.23.0": {},
+      "GitForWindows/2.24.0.2": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -3679,26 +3679,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AWSSDK.Core/3.3.103.61": {
+    "AWSSDK.Core/3.3.103.68": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P44Ua5oNX733IJ8b1n0zOdaa8+K1e1VJUnIyaQT4slU4GU0CmoVAO2fTGR1+hIQ6DqPGRG6HOXqH3L+1QxyzaQ==",
-      "path": "awssdk.core/3.3.103.61",
-      "hashPath": "awssdk.core.3.3.103.61.nupkg.sha512"
+      "sha512": "sha512-vEPRUfVbuInPlEyW1TNhCGTNm6W4k+i9/SDOYsT3BysGjs2QzRHJmnJSMsgYj7oHuiAZRkb+cG8hG/wdguvvOw==",
+      "path": "awssdk.core/3.3.103.68",
+      "hashPath": "awssdk.core.3.3.103.68.nupkg.sha512"
     },
-    "AWSSDK.SimpleNotificationService/3.3.101.85": {
+    "AWSSDK.SimpleNotificationService/3.3.101.92": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qu5LHP3liNkg4EJXCYGnOKOOpR6kmIRgikQVF9jjThcyXIIc1Rz2+ohbELhziy8g3GDrqZJU95/mVBNGbij9ZQ==",
-      "path": "awssdk.simplenotificationservice/3.3.101.85",
-      "hashPath": "awssdk.simplenotificationservice.3.3.101.85.nupkg.sha512"
+      "sha512": "sha512-nY4jnyRPV1l2WHad7bhSWa+g9gPLgSvpYwQ8uFZGh2VXJG/diiqYb7gvCxn3/tUC7NhzoXE5D/kWH61/hIegMQ==",
+      "path": "awssdk.simplenotificationservice/3.3.101.92",
+      "hashPath": "awssdk.simplenotificationservice.3.3.101.92.nupkg.sha512"
     },
-    "GitForWindows/2.23.0": {
+    "GitForWindows/2.24.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SocKA/fMQp82199KwJQ0egO1+Qx6sULxNOrzlLcnRlSVZLxKctJpSpUYCDFIJOyBNpKNBL6xuP/m7ZOLqo+gxQ==",
-      "path": "gitforwindows/2.23.0",
-      "hashPath": "gitforwindows.2.23.0.nupkg.sha512"
+      "sha512": "sha512-GqrklbvynagQeX2PNLUkRj54H8kxoIfSZGPaIgzthbx5LBKNpB9vcQsl4fKwfeYdc3zK6QQfatmbnJ2h8b66CQ==",
+      "path": "gitforwindows/2.24.0.2",
+      "hashPath": "gitforwindows.2.24.0.2.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",

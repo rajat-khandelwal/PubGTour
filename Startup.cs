@@ -47,7 +47,7 @@ namespace Asp.MVCCoreWeb
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
           //  services.AddDbContext<Models.TournamentsContext>();
-            services.AddDbContext<Models.EmployeeContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("DevString")));
+            services.AddDbContext<Models.EmployeeContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("production")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,13 +60,13 @@ namespace Asp.MVCCoreWeb
             }
             else
             {
+                //   app.UseHttpsRedirection();
+                //  app.UseExceptionHandler("/Home/Error");
                 app.UseDeveloperExceptionPage();
-                // app.UseExceptionHandler("/Home/Error");
             }
-        // app.UseHttpsRedirection();
+        
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
 
             app.UseAuthentication();
             app.UseMvc(routes =>

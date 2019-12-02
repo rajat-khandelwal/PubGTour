@@ -4,8 +4,8 @@
     ViewData["Title"] = "Details";
 }
 
-
 @Html.HiddenFor(m => m.Id)
+
 <div>
     <br />
     <div class="card text-center">
@@ -16,7 +16,11 @@
         <div class="card-body">
             <h5 class="card-title">@Model.title</h5>
 
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text">
+                Decisions taken by the Admin Team will be final and shall not reverted under any circumstances.
+
+                Players need to take screenshots and report it to the Admin Team whenever asked for. If not, that player/team shall be disqualified.
+            </p>
             <div class="row" style="font-size:x-large">
                 <div class="col-sm">
                     <i class="fas fa-clock"></i><br />
@@ -48,29 +52,10 @@
                 <label>Go back to <a href="/" class="">Home</a></label>
 
             </div>
-            @if (!String.IsNullOrEmpty(Model.Roomkey))
-            {
-                <div class="row"  style="font-size:x-large">
 
-                    <div class="col">
-                        <label  class="">Room Key <i class="fas fa-key"></i> </label>
-                        <input type="text" readonly class="form-control form-control-lg" value="@Model.Roomkey                       ">
-                    </div>
-                    <div class="col">
-                        <label class="">Password <i class="fas fa-lock-open"></i> </label>
-                        <input type="text" readonly class="form-control form-control-lg" value="@Model.Roompassword">
-                    </div>
-
-                </div>
-
-            }
-            else
-            {
-
-                <div class="alert alert-info" role="alert">
-                    Rook Id and password will be display here before match start (id you joined the match)
-                </div>
-            }
+            <div class="text-info" role="alert">
+               Note : Room-Id and password will be sent to your joined menu.
+            </div>
 
         </div>
         <div class="card-footer text-muted">

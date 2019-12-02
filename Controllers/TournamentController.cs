@@ -165,6 +165,7 @@ namespace Asp.MVCCoreWeb.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<JsonResult> GetTournamentList(int skp)
         {
             try
@@ -175,7 +176,7 @@ namespace Asp.MVCCoreWeb.Controllers
                     loggedin = new ApplicationUser();
                     loggedin.Id = "0";
                 }
-                var dd = await _context.tournment.Select(m => new
+                var dd = await _context.tournment.Where(m => m.Date_Time > DateTime.Now).Select(m => new
                 {
                     title = m.title,
                     date_Time = m.Date_Time.ToString("dddd, dd MMMM yyyy hh:mm tt 'IST'"),

@@ -30,7 +30,6 @@ namespace Asp.MVCCoreWeb.Controllers
         [HttpGet]
         public async Task<ActionResult> StartPayment(long id)
         {
-
             Payment pt = new Payment();
             var loggedin = await _usermanager.GetUserAsync(HttpContext.User);
             //pt.email = loggedin.Email;
