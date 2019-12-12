@@ -67,7 +67,8 @@ namespace Asp.MVCCoreWeb.Controllers
             emp.userid = usr.Id;
             emp.Email = usr.Email;
             emp.Phone = usr.PhoneNumber;
-          
+            emp.Password = usr.PasswordHash;
+            emp.ConfirmPassword = usr.PasswordHash;
             emp.PubG_UserName = usr.PubG_UserName;
 
             //Employee empuser = new Employee { Phone = usr.PhoneNumber,PubG_UserName = usr.PubG_UserName,
@@ -92,7 +93,7 @@ namespace Asp.MVCCoreWeb.Controllers
                     olduserdata.PhoneNumber = emp.Phone;
                     olduserdata.UserName = emp.Phone;
                     olduserdata.PubG_UserName = emp.PubG_UserName;
-
+                    olduserdata.Email = emp.Email;
                     var result = await usermanager.UpdateAsync(olduserdata);
 
                     if (result.Succeeded)
@@ -107,6 +108,7 @@ namespace Asp.MVCCoreWeb.Controllers
                         ModelState.AddModelError("", error.Description);
                     }
                 }
+                
             }
             catch (Exception ex) {
 

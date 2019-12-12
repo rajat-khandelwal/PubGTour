@@ -47,7 +47,7 @@ function FetchTounament() {
                     '  <div class="p-2 btn-group btn-group-sm float-right" role="group" aria-label="example">' +
                     '       <button type="button" OnClick=javascript:location.replace("/tournament/details/' + val.tourId + '")  class="btn btn-secondary">Detail</button>';
                 if (!val.isjoined) {
-                    item += '<button type="button" OnClick=javascript:location.replace("/Payment/startpayment/' + val.tourId + '")  class="btn btn-success">Join</button>';
+                    item += '<button type="button" OnClick=javascript:location.replace("/Payment/startpayment/' + val.tourId + '")  class="btn btn-success">Join ' + (val.fee > 0?'':'free')  +'</button>';
                 }
                 else {
                     item += '<button type="button"  class="btn btn-success disabled">Joined</button>';

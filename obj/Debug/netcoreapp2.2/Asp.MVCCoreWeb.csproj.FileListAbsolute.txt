@@ -42,4 +42,3 @@ F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\Employee\editdetails.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\Tournament\Notifications.g.cshtml.cs
 F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Razor\Views\Payment\Transactions.g.cshtml.cs
-F:\profession\Asp.MVCCoreWeb\Asp.MVCCoreWeb\obj\Debug\netcoreapp2.2\Asp.MVCCoreWeb.csproj.CoreCompileInputs.cache

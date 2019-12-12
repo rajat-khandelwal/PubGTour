@@ -13,6 +13,14 @@ namespace Asp.MVCCoreWeb.Models
 {
     public class Payment
     {
+        //----------- testing -------------
+        private readonly string _Merchant_Key = "65CudS9IncIICVMw";
+        private readonly string _Merchant_id = "YtLZPg33074291670613";
+       
+        //---------------- production ------------
+       // private readonly string _Merchant_Key = "Vwg4A0EW%uM3MPJB";
+       // private readonly string _Merchant_id = "soHknp97561421088473";
+
         [Key]
         public long Id { get; set; }
 
@@ -114,7 +122,7 @@ namespace Asp.MVCCoreWeb.Models
                 Dictionary<String, String> paytmParams = new Dictionary<String, String>();
 
                 /* Find your MID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
-                paytmParams.Add("MID", "YtLZPg33074291670613");
+                paytmParams.Add("MID", _Merchant_id);
 
                 /* Find your WEBSITE in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
                 paytmParams.Add("WEBSITE", "WEBSTAGING");
@@ -151,13 +159,15 @@ namespace Asp.MVCCoreWeb.Models
                 * You can get Checksum DLL from https://developer.paytm.com/docs/checksum/
                 * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys 
 */
-                String checksum = paytm.CheckSum.generateCheckSum("65CudS9IncIICVMw", paytmParams);
+                String checksum = paytm.CheckSum.generateCheckSum(_Merchant_Key, paytmParams);
 
                 /* for Staging */
-                String url = "https://securegw-stage.paytm.in/order/process";
+                //String url = "https://securegw-stage.paytm.in/order/process";
 
+               
                 /* for Production */
-                // String url = "https://securegw.paytm.in/order/process";
+                 String url = "https://securegw.paytm.in/order/process";
+
 
                 /* Prepare HTML Form and Submit to Paytm */
                 String outputHtml = "";
@@ -195,7 +205,7 @@ namespace Asp.MVCCoreWeb.Models
             Dictionary<String, String> paytmParams = new Dictionary<String, String>();
 
             /* Find your MID in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys */
-            paytmParams.Add("MID", "YtLZPg33074291670613");
+            paytmParams.Add("MID", _Merchant_id);
 
             /* Enter your order id which needs to be check status for */
             paytmParams.Add("ORDERID", OrderId);
@@ -205,7 +215,7 @@ namespace Asp.MVCCoreWeb.Models
             * You can get Checksum DLL from https://developer.paytm.com/docs/checksum/
             * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys 
 */
-            String checksum = paytm.CheckSum.generateCheckSum("65CudS9IncIICVMw", paytmParams);
+            String checksum = paytm.CheckSum.generateCheckSum(_Merchant_Key, paytmParams);
 
             /* put generated checksum value here */
             paytmParams.Add("CHECKSUMHASH", checksum);

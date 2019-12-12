@@ -12,9 +12,21 @@ using System.Threading.Tasks;
 
 namespace Asp.MVCCoreWeb.Controllers
 {
+
     [Authorize]
     public class PaymentController : Controller
     {
+        private readonly string Test_Merchant_Key = "65CudS9IncIICVMw";
+      //  private readonly string Test_Merchant_id = "YtLZPg33074291670613";
+
+
+      /// <summary>
+      /// production keys
+      /// </summary>
+      //  private readonly string _Merchant_Key = "Vwg4A0EW%uM3MPJB";
+      //  private readonly string _Merchant_id = "soHknp97561421088473";
+
+
         private readonly EmployeeContext _context;
 
         private readonly UserManager<ApplicationUser> _usermanager;
@@ -35,7 +47,7 @@ namespace Asp.MVCCoreWeb.Controllers
             //pt.email = loggedin.Email;
             pt.Phone = loggedin.PhoneNumber;
             pt.UserId = loggedin.Id;
-            pt.time = new DateTime();
+            pt.time =  DateTime.Now;
             
             ViewBag.tourinfo =_context.tournment.Find(id);
             pt.TournamentID = id;
@@ -50,14 +62,25 @@ namespace Asp.MVCCoreWeb.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                   
-                    Payment pt = new Payment();
+
+                    if (user.amount == 0)
+                    {
+
+                        user.RESPCODE = "01";
+                        user.Sataus = "free";
+                        _context.Payments.Add(user);
+
+                        _context.SaveChanges();
+                        return RedirectToAction("index","home");
+                    }
+                    //Payment pt = new Payment();
+
                     _context.Payments.Add(user);
                     _context.SaveChanges();
                   
                     user.CallBacklurl = this.Url.Action("checkCheksum", "payment",null,Uri.UriSchemeHttp);
 
-                    string html = pt.StartPayment(user);
+                    string html = user.StartPayment(user);
               
                     TempData["Rawhtml"] = html;
                     return RedirectToAction("InitiatePayment");
@@ -94,7 +117,7 @@ namespace Asp.MVCCoreWeb.Controllers
             * Verify checksum
             * Find your Merchant Key in your Paytm Dashboard at https://dashboard.paytm.com/next/apikeys 
 */
-            bool isValidChecksum = CheckSum.verifyCheckSum("65CudS9IncIICVMw", paytmParams, paytmChecksum);
+            bool isValidChecksum = CheckSum.verifyCheckSum(Test_Merchant_Key, paytmParams, paytmChecksum);
             if (isValidChecksum)
             {
                 Payment pt = new Payment();

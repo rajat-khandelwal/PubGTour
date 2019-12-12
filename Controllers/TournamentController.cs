@@ -38,7 +38,7 @@ namespace Asp.MVCCoreWeb.Controllers
             }
 
             var tournaments = await _context.tournment
-                .FirstOrDefaultAsync(m => m.Id == id).ConfigureAwait(false);
+                .FirstOrDefaultAsync(m => m.Id == id);
           
             
             if (tournaments == null)
@@ -46,8 +46,8 @@ namespace Asp.MVCCoreWeb.Controllers
                 return NotFound();
             }
 
-            var isjoined = _context.Payments.Where(p => p.TournamentID == tournaments.Id && p.UserId == _usermanager.GetUserId(User));
-
+            var isjoined =  _context.Payments.Where(p => p.TournamentID == tournaments.Id && p.RESPCODE.Contains("01") && p.UserId == _usermanager.GetUserId(User)).ToList();
+            ViewBag.isjoined = isjoined.Count() > 0 ? true : false;
             if (_context.Payments.Any(p => p.TournamentID == tournaments.Id && p.UserId == _usermanager.GetUserId(User)))
 
             {
@@ -204,9 +204,9 @@ namespace Asp.MVCCoreWeb.Controllers
         {
 
             var plyaerslist = (from tr in _context.tournment
-                               join py in _context.Payments on tr.Id equals py.TournamentID
+                               join py in _context.Payments on tr.Id equals py.TournamentID  
                                join usr in _context.Users on py.UserId equals usr.Id
-                               where tr.Id == id
+                               where tr.Id == id && py.RESPCODE == "01"
                                select new
                                {
                                    UserName = usr.PubG_UserName,
@@ -218,12 +218,14 @@ namespace Asp.MVCCoreWeb.Controllers
         }
 
 
-        public async Task<IActionResult> Notifications() {
+        public async Task<IActionResult> Notifications() 
+        {
+
             var id =  _usermanager.GetUserId(User);
 
             var dd = await _context.Payments.Where(a => a.UserId == id && a.RESPCODE == "01").Select(s => s.TournamentID).ToListAsync();
 
-            var notlist = await _context.tournment.OrderByDescending(o => o.Date_Time).ToListAsync();
+            var notlist = await _context.tournment.Where(m => dd.Contains(m.Id)).OrderByDescending(o => o.Date_Time).ToListAsync();
 
             return View(notlist);
 

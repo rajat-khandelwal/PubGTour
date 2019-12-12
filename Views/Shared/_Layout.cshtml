@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>@ViewData["Title"]</title>
 
     <environment include="Development">
@@ -21,55 +22,60 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <!-- Custom styles for this template -->
     @*<link href="~/lib/bootstrap/dist/css/floating-labels.css" rel="stylesheet">*@
+<script data-ad-client="ca-pub-5825419283298047" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body class="bg-light">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/icons/BFicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                    BoTox-Ground
-                </a>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/icons/BFicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                BoTox-Ground
+            </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" asp-area="" asp-controller="payment" asp-action="Transactions">Transactions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" asp-area="" asp-controller="employee" asp-action="editdetails">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Tournament" asp-area="" asp-action="Notifications"><i class="fas fa-bell"></i> <span class="badge badge-light">Joined</span></a>
-                        </li>
-                    </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info" asp-area="" asp-controller="payment" asp-action="Transactions">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info" asp-area="" asp-controller="employee" asp-action="editdetails">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Tournament" asp-area="" asp-action="Notifications"><i class="fas fa-bell"></i> <span class="badge badge-light">Joined</span></a>
+                    </li>
+                </ul>
 
-                    @if (SigninUser.IsSignedIn(User))
-                    {
+                @if (SigninUser.IsSignedIn(User))
+                {
 
-                        <a class="btn btn-outline-danger" method="Post" asp-controller="Account" asp-action="Logout">
-                            Logout @User.Identity.Name
-                        </a>
+                    <a class="btn btn-outline-danger" method="Post" asp-controller="Account" asp-action="Logout">
+                        Logout @User.Identity.Name
+                    </a>
 
-                    }
-                    else
-                    {
-                        <a class="btn text-success btn-outline-success" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                    }
-                  
-                </div>
-           
+                }
+                else
+                {
+                    <a class="btn text-success btn-outline-success" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                }
+
+            </div>
+
         </nav>
     </header>
     <div class="container">
         <partial name="_CookieConsentPartial" />
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- firstad -->
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -77,7 +83,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - BotoxGround - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - BotoxGround - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <environment include="Development">

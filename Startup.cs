@@ -60,9 +60,9 @@ namespace Asp.MVCCoreWeb
             }
             else
             {
-                //   app.UseHttpsRedirection();
-                //  app.UseExceptionHandler("/Home/Error");
-                app.UseDeveloperExceptionPage();
+                 app.UseHttpsRedirection();
+                  app.UseExceptionHandler("/Home/Error");
+                //app.UseDeveloperExceptionPage();
             }
         
             app.UseStaticFiles();

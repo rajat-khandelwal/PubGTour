@@ -45,8 +45,16 @@
                     }
                     else
                     {
-                        <button class="btn btn-success" onclick="javascript:location.replace('/Payment/startpayment/@Model.Id')">Join</button>
+                        if (ViewBag.isjoined)
+                        {
+                            <button class="btn btn-success disabled" onclick="">Joined</button>
 
+                        }
+                        else
+                        {
+                            <button class="btn btn-success" onclick="javascript:location.replace('/Payment/startpayment/@Model.Id')">Join</button>
+
+                        }
                     }
                 }
                 <label>Go back to <a href="/" class="">Home</a></label>
